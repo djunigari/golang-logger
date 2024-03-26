@@ -1,4 +1,4 @@
-module github.com/djunigari/logger
+module github.com/djunigari/golang-logger
 
 go 1.22.1
 
