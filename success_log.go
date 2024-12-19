@@ -30,6 +30,7 @@ const (
 // LogCreatedSuccess registers successful creation logs
 func LogCreatedSuccess(entityName string, attributes interface{}) {
 	logFolderPath := os.Getenv("CREATED_SUCCESS_FOLDER_PATH")
+
 	logActionSuccess("CREATE", entityName, attributes, logFolderPath)
 }
 
@@ -47,7 +48,8 @@ func LogDeletedSuccess(entityName string, attributes interface{}) {
 
 func logActionSuccess(actionType string, entityName string, attributes interface{}, logFolderPath string) {
 	// Check if the log directory exists. If not, create it
-	err := os.MkdirAll(logFolderPath, 0755)
+
+	err := os.MkdirAll(LoggerFolderPath+logFolderPath, 0755)
 	if err != nil {
 		log.Fatalf("Failed to create log directory: %v", err)
 	}

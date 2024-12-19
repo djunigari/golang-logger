@@ -14,9 +14,9 @@ import (
 func LogError(errorMessage string, errorDetails string) {
 	logFolderPath := os.Getenv("LOGGER_FOLDER_PATH")
 
-	err := os.MkdirAll(logFolderPath, 0755)
+	err := os.MkdirAll(LoggerFolderPath+logFolderPath, 0755)
 	if err != nil {
-		log.Fatalf("Falha ao criar o diretório de logs: %v", err)
+		log.Fatalf("Falha ao criar o diretório de error logs: %v", err)
 	}
 
 	// Criar o caminho completo para o arquivo de log de erro
